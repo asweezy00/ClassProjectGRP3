@@ -3,12 +3,12 @@ import javafx.application.Application;
 
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.Tab;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.layout.HBox;
+
+//import java.awt.*;
 import java.util.Random;
 
 import javafx.stage.Stage;
@@ -27,7 +27,7 @@ public class Main extends Application {
 
         Tab introTab = new Tab("Sorting Intro", new Label("Sorting Intro"));
         Tab bubbleTab = new Tab("Bubble Sort"  , new Label("Bubble Sort Description: " + "\n" + "Bubble Sort is the simplest sorting algorithm that works" +
-                                                                    "by repeatedly swapping the adjacent elements if they are in wrong order."));
+                "by repeatedly swapping the adjacent elements if they are in wrong order."));
         Tab selectionTab = new Tab("Selection Sort" , new Label("Show all boats available"));
         Tab InsertionSort = new Tab("Insertion Sort", new Label ("Insertion Sort"));
         Tab mergeSort = new Tab("Merge Sort", new Label("Merge Sort"));
@@ -40,7 +40,7 @@ public class Main extends Application {
         tabPane.getTabs().add(mergeSort);
         tabPane.getTabs().add(QuickSort);
 
-        //Intro textfield
+        //Intro textfield Compnents
         TextField introfield1 = new TextField();
         TextField introfield2 = new TextField();
         TextField introfield3 = new TextField();
@@ -51,6 +51,11 @@ public class Main extends Application {
         TextField introfield8 = new TextField();
         TextField introfield9 = new TextField();
         TextField introfield10 = new TextField();
+        Button button = new Button ("Btn1");
+        Button button1 = new Button ("Btn1");
+        Button button2 = new Button("Btn1");
+
+
 
         // Bubble textfield
         TextField bubblefield1 = new TextField();
@@ -75,7 +80,7 @@ public class Main extends Application {
         TextField selectionfield8 = new TextField();
         TextField selectionfield9 = new TextField();
         TextField selectionfield10 = new TextField();
-        
+
         //Insertion text field
         TextField insf1 = new TextField();
         TextField insf2 = new TextField();
@@ -113,8 +118,12 @@ public class Main extends Application {
 
 
         // Intro Tab content
+        FlowPane intropane = new FlowPane();
+
         HBox introBub = new HBox(introfield1,introfield2,introfield3,introfield4,introfield5,introfield6,introfield7,introfield8 ,introfield9 ,introfield10);
-        introTab.setContent(introBub);
+        HBox introbtn = new HBox(button,button1,button2);
+        intropane.getChildren().addAll(introBub,introbtn);
+        introTab.setContent(intropane);
         introBub.setPadding(new Insets(100, 0, 0,0));
 
         //Bubble Tab Content
@@ -127,7 +136,7 @@ public class Main extends Application {
         selectionTab.setContent(selec);
         selec.setPadding(new Insets(100, 0, 0,0));
 
-        //Insertion Tab Content 
+        //Insertion Tab Content
         HBox insert = new HBox(insf1,insf2,insf3,insf4,insf5,insf6,insf7,insf8 ,insf9 ,insf10);
         insert.setPadding(new Insets(100,0,0,0));
         InsertionSort.setContent(insert);
