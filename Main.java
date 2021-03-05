@@ -51,9 +51,9 @@ public class Main extends Application {
         TextField introfield8 = new TextField();
         TextField introfield9 = new TextField();
         TextField introfield10 = new TextField();
-        Button button = new Button ("Btn1");
-        Button button1 = new Button ("Btn1");
-        Button button2 = new Button("Btn1");
+        Button introbtn = new Button ("Btn1");
+        Button introbtn1 = new Button ("Btn1");
+        Button introbtn2 = new Button("Btn1");
 
 
 
@@ -68,6 +68,9 @@ public class Main extends Application {
         TextField bubblefield8 = new TextField();
         TextField bubblefield9 = new TextField();
         TextField bubblefield10 = new TextField();
+        Button bubblebtn = new Button ("Btn1");
+        Button bubblebtn1 = new Button ("Btn1");
+        Button bubblebtn2 = new Button("Btn1");
 
         //Selection Text Field
         TextField selectionfield1 = new TextField();
@@ -80,6 +83,9 @@ public class Main extends Application {
         TextField selectionfield8 = new TextField();
         TextField selectionfield9 = new TextField();
         TextField selectionfield10 = new TextField();
+        Button selecbtn = new Button ("Btn1");
+        Button selecbtn1 = new Button ("Btn1");
+        Button selecbtn2 = new Button("Btn1");
 
         //Insertion text field
         TextField insf1 = new TextField();
@@ -92,6 +98,9 @@ public class Main extends Application {
         TextField insf8 = new TextField();
         TextField insf9 = new TextField();
         TextField insf10 = new TextField();
+        Button insbtn = new Button ("Btn1");
+        Button insbtn1 = new Button ("Btn1");
+        Button insbtn2 = new Button("Btn1");
 
         // merge Text fields
         TextField mgf1 = new TextField();
@@ -104,6 +113,9 @@ public class Main extends Application {
         TextField mgf8 = new TextField();
         TextField mgf9 = new TextField();
         TextField mgf10 = new TextField();
+        Button mgfbtn = new Button ("Btn1");
+        Button mgfbtn1 = new Button ("Btn1");
+        Button mgfbtn2 = new Button("Btn1");
 
         TextField quickfield1 = new TextField();
         TextField quickfield2 = new TextField();
@@ -115,31 +127,45 @@ public class Main extends Application {
         TextField quickfield8 = new TextField();
         TextField quickfield9 = new TextField();
         TextField quickfield10 = new TextField();
+        Button quickbtn = new Button ("Btn1");
+        Button quickbtn1 = new Button ("Btn1");
+        Button quickbtn2 = new Button("Btn1");
 
 
         // Intro Tab content
         FlowPane intropane = new FlowPane();
 
         HBox introBub = new HBox(introfield1,introfield2,introfield3,introfield4,introfield5,introfield6,introfield7,introfield8 ,introfield9 ,introfield10);
-        HBox introbtn = new HBox(button,button1,button2);
-        intropane.getChildren().addAll(introBub,introbtn);
+        HBox introbuttons = new HBox(introbtn1,introbtn,introbtn2);
+        intropane.getChildren().addAll(introBub,introbuttons);
         introTab.setContent(intropane);
         introBub.setPadding(new Insets(100, 0, 0,0));
 
         //Bubble Tab Content
+        FlowPane bubblepane = new FlowPane();
+        HBox bubblebuttons =  new HBox(bubblebtn,bubblebtn1,bubblebtn2);
         HBox Hbubble = new HBox(bubblefield1,bubblefield2,bubblefield3,bubblefield4,bubblefield5,bubblefield6,bubblefield7,bubblefield8 ,bubblefield9 ,bubblefield10);
-        bubbleTab.setContent(Hbubble);
         Hbubble.setPadding(new Insets(100, 0, 0,0));
+        bubblepane.getChildren().addAll(Hbubble,bubblebuttons);
+       bubbleTab.setContent(bubblepane);
 
         //Selection Tab Content
+        FlowPane selectionpane = new FlowPane();
         HBox selec = new HBox(selectionfield1,selectionfield2,selectionfield3,selectionfield4,selectionfield5,selectionfield6,selectionfield7,selectionfield8 ,selectionfield9 ,selectionfield10);
-        selectionTab.setContent(selec);
+        HBox selectionbuttons = new HBox(selecbtn,selecbtn1,selecbtn2);
+        selectionpane.getChildren().addAll(selec,selectionbuttons);
+        selectionTab.setContent(selectionpane);
         selec.setPadding(new Insets(100, 0, 0,0));
 
+
+
         //Insertion Tab Content
+        FlowPane insertpane  = new FlowPane();
         HBox insert = new HBox(insf1,insf2,insf3,insf4,insf5,insf6,insf7,insf8 ,insf9 ,insf10);
+        HBox insertbuttons = new HBox(insbtn,insbtn1,insbtn2);
+        insertpane.getChildren().addAll(insert,insertbuttons);
         insert.setPadding(new Insets(100,0,0,0));
-        InsertionSort.setContent(insert);
+        InsertionSort.setContent(insertpane);
 
         //mergesort content
         HBox merge = new HBox(mgf1,mgf2,mgf3,mgf4,mgf5,mgf6,mgf7,mgf8 ,mgf9 ,mgf10);
