@@ -168,14 +168,20 @@ public class Main extends Application {
         InsertionSort.setContent(insertpane);
 
         //mergesort content
+        FlowPane mergepane = new FlowPane();
         HBox merge = new HBox(mgf1,mgf2,mgf3,mgf4,mgf5,mgf6,mgf7,mgf8 ,mgf9 ,mgf10);
+        HBox mergebuttons = new HBox(mgfbtn,mgfbtn1,mgfbtn2);
         merge.setPadding(new Insets(100,0,0,0));
-        mergeSort.setContent(merge);
+        mergepane.getChildren().addAll(merge,mergebuttons);
+        mergeSort.setContent(mergepane);
 
         // Quick sort content
+        FlowPane quickpane = new FlowPane();
         HBox quick = new HBox(quickfield1,quickfield2,quickfield3,quickfield4,quickfield5,quickfield6,quickfield7,quickfield8 ,quickfield9 ,quickfield10);
+        HBox quickbtns = new HBox(quickbtn,quickbtn1,quickbtn2);
+        quickpane.getChildren().addAll(quick,quickbtns);
         quick.setPadding(new Insets(100,0,0,0));
-        QuickSort.setContent(quick);
+        QuickSort.setContent(quickpane);
 
         VBox vBox = new VBox(tabPane);
         Scene scene = new Scene(vBox);
@@ -183,7 +189,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
         primaryStage.setWidth(600);
         primaryStage.setHeight(600);
-        primaryStage.setTitle("JavaFX App");
+        primaryStage.setTitle("Sorting Program");
 
         primaryStage.show();
     }
